@@ -1,0 +1,110 @@
+project_name: 海尔学校-自动化接口测试
+
+server:
+  dev: http://xx.1xx.60.xxx:xxx/xxx
+  test: http://portal-test.xxx.cn/
+
+# 操作数据库
+Operations_db:
+  assert_db: False  #  True  启用数据库查询断言   False  不启用
+  backup: False   #启动测试前启动备份数据库  数据库服务器 linux，windows都适用
+  recovery: False  #测试完成后恢复备份数据库  数据库服务器 linux，windows都适用
+
+#用例等级 "["P1","P2","P3","P4","P5"]"  设置需要测试用例等级，区分用例的重要程度，例：冒烟
+severity:
+  case_severity: ["P1","P2","P3","P4"]
+  cor_rel_case_severity: #用例等级和allure报告优先级的对应关系
+    P1: blocker
+    P2: critical
+    P3: normal
+    P4: minor
+    P5: trivial
+
+# 基准的请求头信息
+request_headers: {}
+
+# 基准存放提取参数的池子
+extra_pool: {"token":'',"username":"admin","password":"leyaun@2024"}
+
+# 基准的请求参数
+request_parameters: {}
+
+test_case_type:  # 用例读取的来源  为True读取文件类型，为False不读取,如excel 和yaml都为True时 读取累加
+  dev:
+    - read: True  #  True  读取excle文件中的用例   False  不读取
+      test_case: ./data/env_dev/case_excle/
+      file: xlsx
+      order: 1   #顺序
+
+    - read: False  #  True  False  读取yaml文件中的用例
+      test_case: ./data/env_dev/case_yaml/
+      file: yaml
+      order: 0  #顺序
+
+  test:
+    - read: True  #  True  读取excle文件中的用例   False  不读取
+      test_case: ./data/env_test/case_excle/
+      file: xlsx
+      order: 1   #数字排序顺序
+
+    - read: False  #  True  False  读取yaml文件中的用例
+      test_case: ./data/env_test/case_yaml/
+      file: yaml
+      order: 0  #数字排序顺序
+
+  prod:
+    - read: True  #  True  读取excle文件中的用例   False  不读取
+      test_case: ./data/env_prod/case_excle/
+      file: xlsx
+      order: 1   #顺序
+
+    - read: False  #  True  False  读取yaml文件中的用例
+      test_case: ./data/env_prod/case_yaml/
+      file: yaml
+      order: 0  #顺序
+
+
+# 数据库校验- mysql
+database:
+  dev: #开发环境数据库
+    db_type: mysql   #mysql,postgresql 数据库类型
+    data:
+      host: "xx.xx.xx.xxx"
+      port: xxxx
+      user: root
+      # 不用''会被解析成int类型数据
+      password: dcff6e8396266c28634bb124a1028049
+      database: devops
+
+  test: #测试环境数据库
+    db_type: mysql   #mysql,postgresql 数据库类型
+    data:
+      host: "xx.xx4.x1.1xx4" #localhost  127.0.0.1
+      port: xxxx
+      user: root
+      # 不用''会被解析成int类型数据
+      password: dcff6e8396266c28634bb124a1028049
+      database: devops
+
+  prod: #测试环境数据库
+    db_type: mysql   #mysql,postgresql 数据库类型
+    data:
+      host: "xxxxx" #localhost  127.0.0.1
+      port: xxxx
+      user: root
+      # 不用''会被解析成int类型数据
+      password: dcff6e8396266c28634bb124a1028049
+      database: devops
+
+# 备用redis配置
+redis:
+  dev:
+    host: "xxxx"
+    port: xxxx
+    password: dcff6e8396266c28634bb124a1028049
+    dbname: 15
+  test:
+    host: "1xxxx"
+    port: xxxx
+    password: xxxxx
+    database: 14

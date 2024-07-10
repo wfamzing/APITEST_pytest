@@ -1,0 +1,12 @@
+2024-07-03 10:36:03.391 | WARNING  | conftest:env_url:23 - 执行环境为：【test】 http://portal-test.haierschool.cn/
+2024-07-03 10:36:03.422 | INFO     | conftest:start_end:28 - ===============================================================================================华丽的分割线【开始】===============================================================================================
+2024-07-03 10:40:59.154 | INFO     | common.condition:skip_if:25 - 
+2024-07-04 14:33:49.843 | INFO     | conftest:start_end:30 - ===============================================================================================华丽的分割线【结束】===============================================================================================
+2024-07-04 14:33:49.970 | INFO     | conftest:pytest_terminal_summary:60 - 用例总数: 3
+2024-07-04 14:33:49.971 | SUCCESS  | conftest:pytest_terminal_summary:61 - 通过用例: 0
+2024-07-04 14:33:49.972 | ERROR    | conftest:pytest_terminal_summary:62 - 异常用例数: 0
+2024-07-04 14:33:49.974 | ERROR    | conftest:pytest_terminal_summary:63 - 失败用例数: 0
+2024-07-04 14:33:49.974 | WARNING  | conftest:pytest_terminal_summary:64 - 跳过用例数: 0
+2024-07-04 14:33:49.975 | INFO     | conftest:pytest_terminal_summary:65 - 用例执行时长: 100667.87 s
+2024-07-04 14:33:49.976 | INFO     | conftest:pytest_terminal_summary:73 - 用例成功率:0.0
+2024-07-04 14:33:49.978 | INFO     | common.exchange_data:post_pytest_summary:182 - {'token': 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJsb2dpbl91c2VyX2tleSI6IjI3N2NkMGMzLWNkNTctNGM3ZC04N2I0LTM5ZDU2NDZkMTA5NSJ9.cBvwFoQd5IfUPAik0z_jAPOdVTv6P9RO4IywzbgJItXtnkDjFO3BQSQ0MgQsfyBwQBn9wv79z3ASKq-syM5nZQ', 'username': 'admin', 'password': 'leyaun@2024', 'url': 'http://portal-test.haierschool.cn/', 'env': 'test', '_TOTAL': '3', '_PASSED': '0', '_ERROR': ' 0', '_FAILED': ' 0', '_SKIPPED': ' 0', '_TIMES': '100667.87 s', '_SUCCESS_RATE': '0.0', 'PROJECT_NAME': '海尔学校-自动化接口测试'}
